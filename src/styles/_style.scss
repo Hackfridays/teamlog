@@ -1,0 +1,75 @@
+/*
+ *	Global
+ *	Overrides
+ */
+ 
+html { height: 100%; }
+ 
+body {
+  overflow: auto !important;
+}
+
+body.dashboard {
+	padding-top: 60px;
+
+	.jumbotron { background-color: $light-grey; }
+
+	.btn.addmodel { font-size: 20px; }
+
+	// Pages
+	// Teamlist
+	.teamlist {
+
+		& > div	{
+			text-align: center;
+			min-height: 240px;
+		}
+
+		.thumbnail-round	{
+			padding: 4px;
+			width: 148px;
+			height: 148px;
+			overflow: hidden;
+			border-radius: 200px;
+			margin: 0 auto;
+
+			img	{
+				width: 100%; border-radius: 200px;
+			}
+		}
+
+		icons a	{
+			padding: 2px;
+			font-size: 1.25em;
+			color: $main-color;
+
+			&:hover	{ color: $dark-color; }
+		}
+	}
+
+	.iframe-panel iframe	{
+		width: 100%; border: 0; overflow: hidden;
+	}
+}
+
+
+/*
+ *	Global
+ */
+body	{
+	padding-top: 40px;
+}
+
+/*
+ *	Identity
+ */
+.navbar img.identity	{
+	float: left; margin: -9px 10px;
+}
+
+/*
+ *	Overrides
+ */
+.btn.addmodel	{
+	font-size: 20px;
+}

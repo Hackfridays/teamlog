@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+	{{#title}}
+	<div class="panel-heading">
+		<h3 class="panel-title">{{title}}</h3>
+	</div>
+	{{/title}}
+	
+	<div class="panel-body">
+		<form>
+			<div class="input-group">
+				<label class="input-group-addon" for="email">User</label>
+				<input type="email" class="form-control" placeholder="E-mail address" id="email" name="email">
+			</div>
+			
+			<div class="input-group">
+				<label class="input-group-addon" for="passphrase">Passphrase</label>
+				<input type="email" class="form-control" placeholder="Something with unicorns?" id="passphrase" name="passphrase">
+			</div>
+			
+			<div class="login-nav">
+				<input type="submit" class="btn btn-primary pull-left" value="Log in"></button>
+				<div class="pull-right">
+					<a href="/alpha.html">Alpha user</a>
+					<a href="/lost.html">Lost password</a> 
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	{{#footer}}
+		<div class="panel-footer">{{{footer}}}</div>
+	{{/footer}}
+</div>

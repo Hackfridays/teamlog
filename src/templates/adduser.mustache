@@ -1,0 +1,37 @@
+<div class="panel panel-{{paneltype}}">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{title}}</h3>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="input-group">
+      <label for="email" class="input-group-addon">E-mail</label>
+      <input id="email" type="email" class="form-control" placeholder="john@doe.com" required />
+    </div>
+    <br>
+
+    <div class="input-group">
+      <label for="firstname" class="input-group-addon">First name</label>
+      <input id="firstname" type="text" class="form-control" placeholder="John" required />
+    </div>
+    <br>
+
+    <div class="input-group">
+      <label for="lastname" class="input-group-addon">Last name</label>
+      <input id="lastname" type="text" class="form-control" placeholder="Doe" required />
+    </div>
+    <br>
+
+    <div class="input-group">
+      <label for="email" class="input-group-addon">To account</label>
+      <select>
+        <option disabled>loading accounts...</option>
+      </select>
+    </div>
+    <br>
+
+    <button id="adduser" class="btn btn-default">Add User</button>
+
+  </div>
+</div>

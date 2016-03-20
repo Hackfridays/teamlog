@@ -1,0 +1,13 @@
+{
+  "id":1,
+  "fullname":"Koen Betsens",
+  "firstname":"Koen",
+  "lastname":"Betsens",
+  "email":"koen@betsens.be",
+  "avatar":"https:\/\/pbs.twimg.com\/profile_images\/460710408500695041\/eZGWaSPZ.png",
+  "accounts":[
+    {"id":1,
+    "name":"Cloudoki"
+    }
+  ]
+}

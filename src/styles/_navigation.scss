@@ -1,0 +1,54 @@
+/**
+ *	Navigation bar
+ */
+nav.navbar {
+	border-top: 2px solid $main-color;
+
+	a { text-decoration: none; }
+
+	img.identity {
+		width: 45px;
+		height: 42px;
+		max-height: 42px;
+		
+		margin: -12px 0;
+		float: left;
+	}
+
+	.nav-title { padding-left: 12px; }
+
+	ul.navbar-nav	{
+		padding-left: 10px;
+
+		.profile {
+			width: 38px;
+			height: 38px;
+			margin: 6px 6px 0 0;
+			text-align: center;
+
+			span {
+				line-height: 1.12em;
+				font-size: 32px;
+				color: $main-color;
+			}
+
+			.profile-avatar	{
+				width: 38px;
+				height: 38px;
+				background-size: 100%;
+				border-radius: 50px;
+				overflow: hidden;
+				border: 2px solid $grey;
+			}
+
+			a span { color: rgba(255,255,255, 0); }
+
+			&:hover {
+				a span {
+					color: $white;
+					text-shadow: 0 0 4px rgba(0,0,0, .4);
+				}
+			}
+		}
+	}
+}

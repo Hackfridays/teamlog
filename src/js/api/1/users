@@ -1,0 +1,28 @@
+[
+	{"id":1,
+  "fullname":"Koen Betsens",
+  "firstname":"Koen",
+  "lastname":"Betsens",
+  "email":"koen@cloudoki.com",
+  "avatar":"https:\/\/pbs.twimg.com\/profile_images\/460710408500695041\/eZGWaSPZ.png",
+  "accounts":[
+    {
+      "id":1,
+      "name":"Cloudoki"
+    }
+  ]},
+	{
+    "id":2,
+    "fullname":"Rui Cloudoki",
+    "firstname":"Rui",
+    "lastname":"Molefas",
+    "email":"rui@cloudoki.com",
+    "avatar":null,
+    "accounts":[
+      {
+        "id":1,
+        "name":"Cloudoki"
+      }
+    ]
+  }
+]

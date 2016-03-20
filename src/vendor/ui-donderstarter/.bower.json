@@ -1,0 +1,21 @@
+{
+  "name": "ui_donder_starter",
+  "homepage": "www.cloudoki.com",
+  "authors": [
+    "Rui Molefas <molefas@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "devDependencies": {},
+  "_release": "8e034c8fe1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8e034c8fe14ee5e686233d6a98f51e99caf4029e"
+  },
+  "_source": "https://github.com/Cloudoki/ui-donderstarter.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/Cloudoki/ui-donderstarter.git"
+}
