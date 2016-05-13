@@ -89,7 +89,7 @@ Once registered, you'll be able to retrieve the Drive API **access token**. This
 Select "API Manager", "Credentials", "Create credentials". We'll be using the `API Key`, from the drop-down, as a `Web server` (accessing only `Application data`). 
 *"Web server" comes closest to the truth, since we won't be storing any credentials in public.*
 
-### Spec List
+## Spec List
 - Extremely easy to construct architecture, easy access to complex app-building
 - Deployable in limiting environments
 - Descent authentication process
