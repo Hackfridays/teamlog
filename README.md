@@ -88,3 +88,19 @@ If you select Google Drive is your poison of choice, start by creating a new app
 Once registered, you'll be able to retrieve the Drive API **access token**. This token is your last line of defence - if you revoke it (which you should most certainly do if the team is in any way compromised), each team member will need to be re-invited.
 Select "API Manager", "Credentials", "Create credentials". We'll be using the `API Key`, from the drop-down, as a `Web server` (accessing only `Application data`). 
 *"Web server" comes closest to the truth, since we won't be storing any credentials in public.*
+
+### Spec List
+- Extremely easy to construct architecture, easy access to complex app-building
+- Deployable in limiting environments
+- Descent authentication process
+- No central DB (sync in background with File API)
+- pluggable core-ui approach for styling
+- Plugin-based setup, to enable custom additions without hacking
+- Private "team level" option per element
+- Project page friendly
+- Toolbelt reference (connect with github api, stackoverflow tickets, ...)
+- Simple MD based blogging
+- Social Media collection (stream of connected socmed accounts)
+- Ideas pool (upgradeable to project)
+- Team members display
+- Calendar feature
