@@ -34,15 +34,6 @@ Check the `./teamlog/src/js/Plugins` folder for examples.
 - A file API
 
 
-### Authentication concept
-
-The "alpha user" uploads an encrypted database json file and unique token files per created user, including itself.
-On login, an encryption happens of username & passphrase. If a successful file is found, the name and unhash key of the database file can be retrieved.
-
-All data is stored through non-public file storage api (eg. Google Drive).
-The API access_token is NOT stored in the public repo, but instead handled as "team level private" by the users.
-
-
 ## Install
 
 1. Open your cli tool of choice, and cd to your teamlog root.
@@ -50,7 +41,6 @@ The API access_token is NOT stored in the public repo, but instead handled as "t
 1. Run your initial distribution release through `gulp build`.
 1. Point your host and http server to the `./teamlog/dist` folder, with `index index.html` as index file. 
 1. Profit.
-
 
 #### During development
 
@@ -78,3 +68,23 @@ Run the command:
 `npm run static`
 
 Open your browser at `http://127.0.0.1:8080/`
+
+
+## Authenticate
+
+##### Authentication concept
+The "alpha user" uploads an encrypted database json file and unique token files per created user, including itself.
+On login, an encryption happens of username & passphrase. If a successful file is found, the name and unhash key of the database file can be retrieved.
+
+All data is stored through non-public file storage api (eg. Google Drive).
+The API access_token is NOT stored in the public repo, but instead handled as "team level private" by the users.
+
+### Alpha user install
+The first step in managing the actual Teamlog credentials and contents, is connecting to a File API of your choice. This API will serve both your local data synchronisation as authentication needs, in a reasonably safe fashion.
+
+#### Google Drive set up
+If you select Google Drive is your poison of choice, start by creating a new application in the [Google Developers Console](https://console.developers.google.com/start/api?id=drive), and certify it for working with the [Drive API](https://developers.google.com/drive/v3/web/quickstart/js).
+
+Once registered, you'll be able to retrieve the Drive API **access token**. This token is your last line of defence - if you revoke it (which you should most certainly do if the team is in any way compromised), each team member will need to be re-invited.
+Select "API Manager", "Credentials", "Create credentials". We'll be using the `API Key`, from the drop-down, as a `Web server` (accessing only `Application data`). 
+*"Web server" comes closest to the truth, since we won't be storing any credentials in public.*

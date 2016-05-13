@@ -1,8 +1,6 @@
 // Include gulp & del
 var gulp = require('gulp');
 var del = require('del');
-
-// Include Our Plugins
 var jshint = require('gulp-jshint');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
@@ -17,12 +15,19 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var fs = require('fs');
 
-// load and clean config file
-var config = fs.readFileSync('./src/js/config.js', 'utf-8');
-config = config.replace(/define\(/g,'');
-config = config.replace(/\);/g,'');
-config = eval( '(' + config + ')' );
+// Read config file
+var config = {};
+define = function(d){ config = d; }
 
+c = require('./src/js/config.js');
+eval(c);
+
+m = fs.readFileSync('./src/js/main.js', 'utf-8');
+m = m.substring(m.indexOf('require.config')+15, m.indexOf('});')+1);
+
+config.main = eval('(' + m + ')');
+
+// Dirs
 var dirs = {
     source: 'src',
     staging: 'staging',
@@ -36,8 +41,9 @@ gulp.task('clean', function (cb) {
 
 // Copy files
 gulp.task('copy:html', function () {
-    return gulp.src([dirs.source+'/*.html', '!'+dirs.source+'/login.html'])
-        .pipe(copy(dirs.release, {prefix: 1}));
+    return gulp.src([dirs.source+'/*.html'])
+        .pipe(mustache(config))
+        .pipe(gulp.dest(dirs.release));
 });
 gulp.task('copy:images', function () {
     return gulp.src(dirs.source+'/images/*')
@@ -76,19 +82,6 @@ gulp.task('uglify', function() {
 gulp.task('copy:dummy', function () {
     return gulp.src(dirs.source+'/js/dummy/*')
         .pipe(copy(dirs.release, {prefix: 1}));
-});
-
-// Render html mustache
-gulp.task('copy:mustache', function () {
-    return gulp.src(dirs.source+'/login.html')
-        .pipe(mustache({
-            appname: config.appname,
-            version: config.apiversion,
-            apiurl: config.apiurl,
-            publicurl: config.publicurl,
-            gearmanurl: config.gearmanurl
-        }))
-        .pipe(gulp.dest(dirs.release));
 });
 
 // Lint Tasks
@@ -141,7 +134,7 @@ gulp.task('watch', function () {
 
 // Build, staging and stable tasks
 gulp.task('staging', function (callback) {
-    runSequence('clean', ['copy:images', 'copy:dummy', 'copy:mustache', 'copy:html', 'copy:scripts', 'sass:staging', 'lint:before', 'mustache'], callback);
+    runSequence('clean', ['copy:images', 'copy:dummy', 'copy:html', 'copy:scripts', 'sass:staging', 'lint:before', 'mustache'], callback);
 });
 // stable not working
 /*gulp.task('stable', function (callback) {

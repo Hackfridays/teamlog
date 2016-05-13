@@ -3,71 +3,82 @@
  * Login Cover style
  */
 body.cover {
+	
 	height: 100%;
 	padding-top: 53px;
 	margin-top: 0;
 	background-color: $dark-color;
 	color: $white;
 	text-align: center;
-	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 
 	nav { border-bottom: none; }
+	
+	nav, h1, p { text-shadow: 0 1px 3px rgba(0,0,0,.5); }
 
 	a, a:focus, a:hover { color: $white; }
 
-	.btn-default, .btn-default:hover, .btn-default:focus {
-		background-color: $white;
-		border: 1px solid $white;
-		color: $dark-color;
-		text-shadow: none;
-	}
-
 	.site-wrapper {
+		
 		display: table;
 		width: 100%;
 		height: 100%;
 		min-height: 100%;
-		box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+		box-shadow: inset 0 0 100px rgba(0,0,0, .4);
 
 		.site-wrapper-inner	{
 
 			position: relative;
-			top: -58px;
+			top: -60px;
 
 			display: table-cell;
 			vertical-align: middle;
 
 			.cover-container	{
-				margin-right: auto;
-				margin-left: auto;
+				width: 720px;
+				margin: 0 auto;
 
-				.inner { padding: 30px; }
+				.cover-body	{ padding: 0 20px; }
+				
+				.mastfoot	{
+					width: inherit;
+					position: fixed; bottom: 0;
+					color: rgba(255,255,255,.5);
+				}
 			}
 		}
+	}
+}
 
-		.cover-body	{
-			padding: 0 20px;
-
-			.btn-lg	{
-				padding: 10px 20px;
-				font-weight: bold;
-			}
-
-			iframe.login	{
-				width: 520px; height: 440px; background-color: $dark-color; border: 0;
-			}
-			
-			.disclaimer {
-				margin-top: 20px;
-				font-size: .8em;
-			}
-		}
-
-		.mastfoot	{
-			position: fixed; bottom: 0;
-			color: rgba(255,255,255,.5);
-		}
-
-		.mastfoot, .cover-container	{ width: 720px; }
+/*
+ * Bootstrap over-rides
+ * Cover Panels
+ */
+.cover .panel {
+	color: $grey;
+	text-align: left;
+	
+	.input-group { padding-bottom: 12px; }
+	
+	.dropdown-menu a { color: $grey; }
+	
+	.form-control:focus {
+		@extend .bootstrap-outline;
+	}
+	
+	*:focus { outline: none; }
+	
+	.btn-primary { 
+		background-color: $main-color;
+		border-color: rgba(0,0,0, .02);
+		border-bottom-color: rgba(0,0,0, .4);
+	
+		&:hover { border-color: rgba(0,0,0, .2); }
+		&:active { border-color: rgba(0,0,0, .5); }
+	}
+	
+	.login-nav a {
+		padding-left: 10px;
+		color: $grey;
+		line-height: 2.4em;
 	}
 }

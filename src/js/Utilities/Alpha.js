@@ -1,6 +1,6 @@
 define(
-	['config'],
-	function (config)
+	['config', 'mustache'],
+	function (config, Mustache)
 	{	
 		var Alpha = {
 			
@@ -10,7 +10,7 @@ define(
 			 */
 			init: function ()
 			{
-				
+				$("#alpha").html(Mustache.render (Templates.alpha_one, config));
 			}			
 		}
 		

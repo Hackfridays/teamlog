@@ -4,5 +4,6 @@ define({
 	dbversion: 1,
 	apiversion: '1',
 	apiurl: 'js/api/',
-	fileapi: 'google-drive'
+	fileapi: 'google-drive',
+	docs: 'https://github.com/Hackfridays/teamlog'
 });
